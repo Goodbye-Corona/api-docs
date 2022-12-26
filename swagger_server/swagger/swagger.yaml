@@ -27,7 +27,7 @@ paths:
       description: |
         By passing in the appropriate options, you can search for
         available inventory in the system
-      operationId: searchInventory
+      operationId: search_inventory
       parameters:
       - name: searchString
         in: query
@@ -70,13 +70,13 @@ paths:
                 x-content-type: application/json
         "400":
           description: bad input parameter
-      x-swagger-router-controller: COVID19INFECTION
+      x-openapi-router-controller: swagger_server.controllers.covid19_infection_controller
     post:
       tags:
       - admins
       summary: adds an inventory item
       description: Adds an item to the system
-      operationId: addInventory
+      operationId: add_inventory
       requestBody:
         description: Inventory item to add
         content:
@@ -90,7 +90,7 @@ paths:
           description: "invalid input, object invalid"
         "409":
           description: an existing item already exists
-      x-swagger-router-controller: Admins
+      x-openapi-router-controller: swagger_server.controllers.admins_controller
 components:
   schemas:
     InventoryItem:
@@ -141,3 +141,4 @@ components:
         phone: 408-867-5309
         name: ACME Corporation
         homePage: https://www.acme-corp.com
+
